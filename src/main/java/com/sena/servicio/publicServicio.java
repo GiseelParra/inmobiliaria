@@ -22,7 +22,7 @@ public class publicServicio {
 		publicRepository.save(publicacion);
 	}
 
-	public List<Publicacion> Listapublic() {
+	public List<Publicacion> Listapublica() {
 		return publicRepository.findAll();
 	}
 

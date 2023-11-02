@@ -1,5 +1,6 @@
 package com.sena.controladores;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,11 +15,12 @@ import com.sena.servicio.publicServicio;
 @RequestMapping("/PublicControlador")
 public class PublicControlador {
 
+	@Autowired
 	private publicServicio publicServicio;
 
 	@GetMapping("/")
 	public String AdministrarPubli(Model model) {
-		model.addAttribute("listarPublic", publicServicio.Listapublic());
+		model.addAttribute("listarPublic", publicServicio.Listapublica());
 		return "AdministrarPubli";
 	}
 
