@@ -33,5 +33,9 @@ public class publicServicio {
 	public void eliminarpublic(int IdLugar) {
 		publicRepository.deleteById(IdLugar);
 	}
+	
+	public void guardar (Publicacion publicacion) {
+		publicRepository.save(publicacion);
+	}
 
 }

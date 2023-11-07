@@ -29,19 +29,19 @@
 		<thead>
 			<tr>
 				<th>Id Lugar</th>
-				<th>Imagen</th>
 				<th>TipoLugar</th>
 				<th>Descripcion</th>
-				<th>direccion</th>
+				<th>Direccion</th>
+				<th>Imagen</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr th:each="Publicacion:${listarPublic}">
 				<td th:text="${Publicacion.IdLugar}"></td>
-				<td th:text="${Publicacion.Imagen}"></td>
 				<td th:text="${Publicacion.TipoLugar}"></td>
 				<td th:text="${Publicacion.Descripcion}"></td>
 				<td th:text="${Publicacion.direccion}"></td>
+				<td> <img th:src="@{/img/}+${Publicacion.Imagen}"></td>
 				<td>
 					<a th:href="@{/PublicControlador/Eliminarpublic/{IdLugar}(IdLugar=${Publicacion.IdLugar})}">
 						<button>Eliminar publicación</button>
