@@ -25,5 +25,10 @@ public class LoginControlador {
 	public String RecuperarContra() {
 		return "RecuperarContra";
 	}
+	
+	@GetMapping ("/RestaContrasena")
+	public String RestaContrasena() {
+		return "RestaContrasena";
+	}
 
 }

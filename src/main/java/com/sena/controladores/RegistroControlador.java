@@ -10,4 +10,5 @@ public class RegistroControlador {
 	public String Registro() {
 		return "Registro";
 	}
+	
 }

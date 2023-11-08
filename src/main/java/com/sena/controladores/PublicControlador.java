@@ -49,6 +49,7 @@ public class PublicControlador {
 
 	@GetMapping("/Eliminarpublic/{IdLugar}")
 	public String Eliminarpublic(@PathVariable("IdLugar") int IdLugar) {
+		publicServicio.eliminarpublic(IdLugar);
 		return "redirect:/PublicControlador/";
 	}
 
@@ -66,27 +67,27 @@ public class PublicControlador {
 
 	@PostMapping("/guardar")
 	public String guardar(@Validated @ModelAttribute Publicacion publicacion, BindingResult result, Model model,
-			@RequestParam("Imagen") MultipartFile imagen, RedirectAttributes attributes) {
+			@RequestParam("Imagen") MultipartFile imagenes, RedirectAttributes attributes) {
 
 		if (result.hasErrors()) {
-			model.addAttribute("Public", "FormuCrearpublic");
+			model.addAttribute("titulo", "Formulario: nuevas Fotografias");
 			model.addAttribute("Publicacion", publicacion);
 
 			attributes.addFlashAttribute("advertencia", "Existieron errores en el formulario");
 			return "redirect:/PublicControlador/";
 		}
 
-		if (!imagen.isEmpty()) {
+		if (!imagenes.isEmpty()) {
 
 			Path directorioimagenes = Paths.get("src//main//resources//static/img");
 			String rutaAbsoluta = directorioimagenes.toFile().getAbsolutePath();
 
 			try {
-				byte[] bytesImg = imagen.getBytes();
-				Path rutaCompleta = Paths.get(rutaAbsoluta + "//" + imagen.getOriginalFilename());
+				byte[] bytesImg = imagenes.getBytes();
+				Path rutaCompleta = Paths.get(rutaAbsoluta + "//" + imagenes.getOriginalFilename());
 				Files.write(rutaCompleta, bytesImg);
 
-				publicacion.setImagen(imagen.getOriginalFilename());
+				publicacion.setImagen(imagenes.getOriginalFilename());
 
 			} catch (IOException e) {
 				e.printStackTrace();
