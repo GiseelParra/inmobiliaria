@@ -66,25 +66,27 @@ public class PublicControlador {
 	}
 
 	@PostMapping("/guardar")
-	public String guardar(@Validated @ModelAttribute Publicacion publicacion, BindingResult result, Model model,
+	public String guardar(@Validated @ModelAttribute("ObPublic") Publicacion publicacion, BindingResult result, Model model,
 			@RequestParam("Imagen") MultipartFile imagenes, RedirectAttributes attributes) {
-
+		
+	
+		
 		if (result.hasErrors()) {
-			model.addAttribute("titulo", "Formulario: nuevas Fotografias");
+			model.addAttribute("titulo", "FormuCrearpublic");
 			model.addAttribute("Publicacion", publicacion);
 
 			attributes.addFlashAttribute("advertencia", "Existieron errores en el formulario");
-			return "redirect:/PublicControlador/";
+			return "redirect:/PublicControlador/FormuCrearpublic";
 		}
 
 		if (!imagenes.isEmpty()) {
 
-			Path directorioimagenes = Paths.get("src//main//resources//static/img");
+			Path directorioimagenes = Paths.get("src//main//resources//static/imagenes");
 			String rutaAbsoluta = directorioimagenes.toFile().getAbsolutePath();
 
 			try {
 				byte[] bytesImg = imagenes.getBytes();
-				Path rutaCompleta = Paths.get(rutaAbsoluta + "//" + imagenes.getOriginalFilename());
+				Path rutaCompleta = Paths.get(rutaAbsoluta + "//"+ imagenes.getOriginalFilename());
 				Files.write(rutaCompleta, bytesImg);
 
 				publicacion.setImagen(imagenes.getOriginalFilename());
@@ -96,7 +98,7 @@ public class PublicControlador {
 		}
 
 		publicServicio.guardar(publicacion);
-		attributes.addFlashAttribute("exito", "Producto guardado con exito");
+		//attributes.addFlashAttribute("exito", "Producto guardado con exito");
 		return "redirect:/PublicControlador/";
 	}
 

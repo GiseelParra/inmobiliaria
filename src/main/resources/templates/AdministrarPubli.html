@@ -10,83 +10,86 @@
 	<meta name="author" content="">
 
 	<title>Administrar Publicación</title>
-
-	<!-- Custom fonts for this template -->
-	<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<!-- Custom fonts for this template-->
+	<link th:href="@{/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
 	<link
 		href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
 		rel="stylesheet">
 
-	<!-- Custom styles for this template -->
-	<link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-	<!-- Custom styles for this page -->
-	<link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<!-- Custom styles for this template-->
+	<link th:href="@{/css/sb-admin-2.min.css}" rel="stylesheet">
 
 </head>
 
-<body id="page-top">
+<!-- DataTales Example -->
+<div class="container text-center">
+	<h1 class="m-0 font-weight-bold text-primary">Mis publicaciones</h1>
 
-	<!-- DataTales Example -->
-	<div class="card shadow mb-4">
-		<div class="text-center">
-			<h1 class="m-0 font-weight-bold text-primary">Publicaión</h1>
+	<a class="sidebar-brand d-flex align-items-center justify-content-center">
+		<div class="sidebar-brand-icon rotate-n-15">
+			<i class="fas fa-laugh-wink"></i>
 		</div>
-		<div class="card-body">
-			<div class="table-responsive">
-				<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-					<thead>
-						<tr>
-							<th>Id</th>
-							<th>TipoLugar</th>
-							<th>Descripcion</th>
-							<th>Direccion</th>
-							<th>Imagen</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="Publicacion:${listarPublic}">
-							<td th:text="${Publicacion.IdLugar}"></td>
-							<td th:text="${Publicacion.TipoLugar}"></td>
-							<td th:text="${Publicacion.Descripcion}"></td>
-							<td th:text="${Publicacion.direccion}"></td>
-							<td> <img th:src="@{/img/}+${Publicacion.Imagen}"></td>
-							<td>
-								<a
-									th:href="@{/PublicControlador/Eliminarpublic/{IdLugar}(IdLugar=${Publicacion.IdLugar})}">
-									<button>Eliminar publicación</button>
-								</a>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
+		<div class="sidebar-brand-text mx-3">MR</div>
+	</a>
+	<br>
+	<a th:href="@{/PublicControlador/FormuCrearpublic}">
+		<button type="button" class="btn btn-outline-primary">Crear</button>
+	</a>
+</div>
+<br>
+<br>
+<div class="container-fluid">
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th scope="col">Id</th>
+				<th scope="col">TipoLugar</th>
+				<th scope="col">Descripcion</th>
+				<th scope="col">Direccion</th>
+				<th scope="col">Imagen</th>
+				<th scope="col">Eliminar publicación</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="Publicacion:${listarPublic}">
+				<td scope="row" th:text="${Publicacion.IdLugar}"></td>
+				<td scope="row" th:text="${Publicacion.TipoLugar}"></td>
+				<td scope="row" th:text="${Publicacion.Descripcion}"></td>
+				<td scope="row" th:text="${Publicacion.direccion}"></td>
+				<td>
+					<img th:src="@{/imagenes/}+${Publicacion.Imagen}" class="bd-placeholder-img rounded" width="200"
+						height="200">
+				</td>
+				<td>
+					<a th:href="@{/PublicControlador/Eliminarpublic/{IdLugar}(IdLugar=${Publicacion.IdLugar})}">
+						<button type="button" class="btn btn-outline-primary">Eliminar</button>
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<!-- Bootstrap -->
+<script src="js/code.jquery.com_jquery-3.7.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
-	</div>
+<!-- Bootstrap core JavaScript-->
+<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
 
-	<!-- Bootstrap core JavaScript-->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
 
-	<!-- Core plugin JavaScript-->
-	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Custom scripts for all pages-->
+<script th:src="@{/js/sb-admin-2.min.js}"></script>
 
-	<!-- Custom scripts for all pages-->
-	<script src="js/sb-admin-2.min.js"></script>
+<!-- Page level plugins -->
+<script th:src="@{/vendor/chart.js/Chart.min.js}"></script>
 
-	<!-- Page level plugins -->
-	<script src="vendor/datatables/jquery.dataTables.min.js"></script>
-	<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-	<!-- Page level custom scripts -->
-	<script src="js/demo/datatables-demo.js"></script>
-
-	<script src="js/code.jquery.com_jquery-3.7.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-
+<!-- Page level custom scripts -->
+<script th:src="@{/js/demo/chart-area-demo.js}"></script>
+<script th:src="@{/js/demo/chart-pie-demo.js}"></script>
 </body>
 
 </html>
