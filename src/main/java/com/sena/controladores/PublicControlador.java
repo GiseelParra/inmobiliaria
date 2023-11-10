@@ -71,13 +71,13 @@ public class PublicControlador {
 		
 	
 		
-		if (result.hasErrors()) {
+	  /*if (result.hasErrors()) {
 			model.addAttribute("titulo", "FormuCrearpublic");
-			model.addAttribute("Publicacion", publicacion);
+			model.addAttribute("ObPublic", publicacion);
 
 			attributes.addFlashAttribute("advertencia", "Existieron errores en el formulario");
 			return "redirect:/PublicControlador/FormuCrearpublic";
-		}
+		} */
 
 		if (!imagenes.isEmpty()) {
 
@@ -98,7 +98,7 @@ public class PublicControlador {
 		}
 
 		publicServicio.guardar(publicacion);
-		//attributes.addFlashAttribute("exito", "Producto guardado con exito");
+		attributes.addFlashAttribute("exito", "Producto guardado con exito");
 		return "redirect:/PublicControlador/";
 	}
 
