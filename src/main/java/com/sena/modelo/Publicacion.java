@@ -18,7 +18,7 @@ public class Publicacion {
 	@Column(length = 20)
 	private String TipoLugar;
 
-	@Column(length = 150)
+	@Column(columnDefinition = "TEXT")
 	private String Descripcion;
 
 	@Column(length = 20)

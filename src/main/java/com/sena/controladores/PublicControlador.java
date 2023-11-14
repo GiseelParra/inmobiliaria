@@ -66,18 +66,17 @@ public class PublicControlador {
 	}
 
 	@PostMapping("/guardar")
-	public String guardar(@Validated @ModelAttribute("ObPublic") Publicacion publicacion, BindingResult result, Model model,
-			@RequestParam("Imagen") MultipartFile imagenes, RedirectAttributes attributes) {
-		
-	
-		
-	  /*if (result.hasErrors()) {
-			model.addAttribute("titulo", "FormuCrearpublic");
-			model.addAttribute("ObPublic", publicacion);
+	public String guardar(@Validated @ModelAttribute("ObPublic") Publicacion publicacion, BindingResult result,
+			Model model, @RequestParam("Imagen") MultipartFile imagenes, RedirectAttributes attributes) {
 
-			attributes.addFlashAttribute("advertencia", "Existieron errores en el formulario");
-			return "redirect:/PublicControlador/FormuCrearpublic";
-		} */
+		/*
+		 * if (result.hasErrors()) { model.addAttribute("titulo", "FormuCrearpublic");
+		 * model.addAttribute("ObPublic", publicacion);
+		 * 
+		 * attributes.addFlashAttribute("advertencia",
+		 * "Existieron errores en el formulario"); return
+		 * "redirect:/PublicControlador/FormuCrearpublic"; }
+		 */
 
 		if (!imagenes.isEmpty()) {
 
@@ -86,7 +85,7 @@ public class PublicControlador {
 
 			try {
 				byte[] bytesImg = imagenes.getBytes();
-				Path rutaCompleta = Paths.get(rutaAbsoluta + "//"+ imagenes.getOriginalFilename());
+				Path rutaCompleta = Paths.get(rutaAbsoluta + "//" + imagenes.getOriginalFilename());
 				Files.write(rutaCompleta, bytesImg);
 
 				publicacion.setImagen(imagenes.getOriginalFilename());
