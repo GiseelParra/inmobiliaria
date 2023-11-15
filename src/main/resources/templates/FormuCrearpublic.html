@@ -238,12 +238,17 @@
 										<label for="TipoLugar"
 											class="m-0 font-weight-bold text-primary form-label">Lugar</label>
 
+
 									</div>
 
-									<div class="input-group mb-3">
-										<input type="text" id="TipoLugar" name="TipoLugar"
-											class="btn btn-outline-primary form-control"
-											placeholder="El inmueble que desea mostrar" required>
+									<div class="mb-3">
+
+										<select class="form-control" id="TipoLugar"name="TipoLugar">
+											<option selected>Open this select menu</option>
+											 <option th:each="categoria : ${TipoLugar}" th:value="${categoria}" th:text="${categoria}">
+    													</option>
+
+										</select>
 									</div>
 
 									<div class="mb-3">

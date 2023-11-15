@@ -16,7 +16,7 @@ public class Publicacion {
 	private int IdLugar;
 
 	@Column(length = 20)
-	private String TipoLugar;
+	private String tipoLugar;
 
 	@Column(columnDefinition = "TEXT")
 	private String Descripcion;
@@ -31,8 +31,9 @@ public class Publicacion {
 	}
 
 	public Publicacion(int idLugar, String tipoLugar, String descripcion, String direccion, String imagen) {
+		super();
 		IdLugar = idLugar;
-		TipoLugar = tipoLugar;
+		this.tipoLugar = tipoLugar;
 		Descripcion = descripcion;
 		this.direccion = direccion;
 		Imagen = imagen;
@@ -47,11 +48,11 @@ public class Publicacion {
 	}
 
 	public String getTipoLugar() {
-		return TipoLugar;
+		return tipoLugar;
 	}
 
 	public void setTipoLugar(String tipoLugar) {
-		TipoLugar = tipoLugar;
+		this.tipoLugar = tipoLugar;
 	}
 
 	public String getDescripcion() {
@@ -77,5 +78,9 @@ public class Publicacion {
 	public void setImagen(String imagen) {
 		Imagen = imagen;
 	}
+
+
+	
+	
 
 }

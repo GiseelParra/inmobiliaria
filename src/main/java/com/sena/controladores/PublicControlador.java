@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,8 +29,16 @@ import com.sena.servicio.publicServicio;
 @RequestMapping("/PublicControlador")
 public class PublicControlador {
 
+	
+	List<String> TipoLugar = new ArrayList<String>(
+			Arrays.asList("Casas","Apartamentos","lotes","pa")
+				
+			);
+	
 	@Autowired
 	private publicServicio publicServicio;
+	
+
 
 	@GetMapping("/")
 	public String AdministrarPubli(Model model) {
@@ -37,6 +48,7 @@ public class PublicControlador {
 
 	@GetMapping("/FormuCrearpublic")
 	public String FormuCrearpublic(Model model) {
+		model.addAttribute("TipoLugar", TipoLugar);
 		model.addAttribute("ObPublic", new Publicacion());
 		return "FormuCrearpublic";
 	}

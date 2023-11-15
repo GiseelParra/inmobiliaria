@@ -1,11 +1,12 @@
 package com.sena.servicio;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.sena.modelo.Publicacion;
+
 import com.sena.repository.PublicRepository;
 
 @Service
@@ -13,7 +14,7 @@ public class publicServicio {
 
 	@Autowired
 	private PublicRepository publicRepository;
-	
+
 	public void AnadirPublic(Publicacion publicacion) {
 		publicRepository.save(publicacion);
 	}
@@ -21,7 +22,7 @@ public class publicServicio {
 	public void ActualizarPublic(Publicacion publicacion) {
 		publicRepository.save(publicacion);
 	}
-
+			
 	public List<Publicacion> Listapublica() {
 		return publicRepository.findAll();
 	}
@@ -29,12 +30,17 @@ public class publicServicio {
 	public Publicacion buscarpublic(int IdLugar) {
 		return publicRepository.findById(IdLugar).get();
 	}
+	
+	
+	/*public List<Publicacion> Listapublicaportipo() {
+		
+	}*/
 
 	public void eliminarpublic(int IdLugar) {
 		publicRepository.deleteById(IdLugar);
 	}
-	
-	public void guardar (Publicacion publicacion) {
+
+	public void guardar(Publicacion publicacion) {
 		publicRepository.save(publicacion);
 	}
 
