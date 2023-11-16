@@ -29,16 +29,13 @@ import com.sena.servicio.publicServicio;
 @RequestMapping("/PublicControlador")
 public class PublicControlador {
 
-	
-	List<String> TipoLugar = new ArrayList<String>(
-			Arrays.asList("Casas","Apartamentos","lotes","pa")
-				
-			);
-	
+	List<String> tipoLugar = new ArrayList<String>(
+			Arrays.asList("CASAS", "APARTAMENTOS", "LOTES", "TERRENOS", "FINCAS", "lOCALES", "OFICINAS", "EDIFICIOS")
+
+	);
+
 	@Autowired
 	private publicServicio publicServicio;
-	
-
 
 	@GetMapping("/")
 	public String AdministrarPubli(Model model) {
@@ -48,7 +45,7 @@ public class PublicControlador {
 
 	@GetMapping("/FormuCrearpublic")
 	public String FormuCrearpublic(Model model) {
-		model.addAttribute("TipoLugar", TipoLugar);
+		model.addAttribute("TipoLugar", tipoLugar);
 		model.addAttribute("ObPublic", new Publicacion());
 		return "FormuCrearpublic";
 	}

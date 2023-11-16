@@ -30,5 +30,10 @@ public class LoginControlador {
 	public String RestaContrasena() {
 		return "RestaContrasena";
 	}
+	
+	@GetMapping ("/secciones")
+	public String secciones() {
+		return "secciones";
+	}
 
 }
