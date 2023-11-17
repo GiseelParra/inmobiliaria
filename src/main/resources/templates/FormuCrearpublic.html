@@ -64,14 +64,14 @@
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="buttons.html">CASAS</a>
-						<a class="collapse-item" href="buttons.html">APARTAMENTOS</a>
-						<a class="collapse-item" href="buttons.html">LOTES</a>
-						<a class="collapse-item" href="cards.html">TERRENOS</a>
-						<a class="collapse-item" href="cards.html">FINCAS</a>
-						<a class="collapse-item" href="cards.html">LOCALES</a>
-						<a class="collapse-item" href="cards.html">OFICINAS</a>
-						<a class="collapse-item" href="cards.html">EDIFICIOS</a>
+						<a class="collapse-item" th:href="@{/casas}">CASAS</a>
+						<a class="collapse-item" th:href="@{/apartamentos}">APARTAMENTOS</a>
+						<a class="collapse-item" th:href="@{/lotes}">LOTES</a>
+						<a class="collapse-item" th:href="@{/terrenos}">TERRENOS</a>
+						<a class="collapse-item" th:href="@{/fincas}">FINCAS</a>
+						<a class="collapse-item" th:href="@{/locales}">LOCALES</a>
+						<a class="collapse-item" th:href="@{/oficinas}">OFICINAS</a>
+						<a class="collapse-item" th:href="@{/edificios}">EDIFICIOS</a>
 					</div>
 				</div>
 			</li>
@@ -161,7 +161,7 @@
 								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="fas fa-search fa-fw"></i>
 							</a> -->
-							<!-- Dropdown - Messages 
+						<!-- Dropdown - Messages 
 							<div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
 								aria-labelledby="searchDropdown">
 								<form class="form-inline mr-auto w-100 navbar-search">
@@ -240,22 +240,55 @@
 
 									<div class="mb-3">
 
-										<label for="tipoLugar"
-											class="m-0 font-weight-bold text-primary form-label">TIPO DE INMUEBLE</label>
+										<label for="tipoLugar" class="m-0 font-weight-bold text-primary form-label">TIPO
+											DE INMUEBLE</label>
 
 
 									</div>
 
 									<div class="mb-3">
 
-										<select class="form-control m-0 font-weight-bold text-primary" id="TipoLugar"name="TipoLugar">
+										<select class="form-control m-0 font-weight-bold text-primary" id="TipoLugar"
+											name="TipoLugar">
 											<option selected>SELECIONE UNA OPCIÓN</option>
-											 <option th:each="categoria : ${TipoLugar}" th:value="${categoria}" th:text="${categoria}">
-    													</option>
+											<option th:each="categoria : ${TipoLugar}" th:value="${categoria}"
+												th:text="${categoria}">
+											</option>
 
 										</select>
 									</div>
 
+									<div class="mb-3">
+										<label for="disponible" class="m-0 font-weight-bold text-primary form-label">
+											DISPONIBLE PARA
+										</label>
+									</div>
+
+									<div class="mb-3">
+										<select class="form-control m-0 font-weight-bold text-primary" id="disponible"
+											name="disponible">
+											<option selected>SELECIONE UNA OPCIÓN</option>
+											<option th:each="categoria : ${disponible}" th:value="${categoria}"
+												th:text="${categoria}">
+											</option>
+
+										</select>
+									</div>
+
+									<div class="mb-3">
+
+										<label for="medida" class="m-0 font-weight-bold text-primary form-label">MEDIDAS
+											DEL INMUEBLE</label>
+
+									</div>
+
+									<div class="input-group mb-3">
+
+										<input type="text" id="medida" name="medida"
+											class="btn btn-outline-primary form-control"
+											placeholder="MEDIDAS DEL INMUEBLE" required>
+
+									</div>
 									<div class="mb-3">
 
 										<label for="Descripcion"
@@ -265,12 +298,9 @@
 
 									<div class="input-group mb-3">
 
-										<!--	<textarea class="btn btn-outline-primary form-control" placeholder="El inmueble que desea mostrar"
-					id="Descripcion"></textarea>-->
-
 										<input type="text" id="Descripcion" name="Descripcion"
 											class="btn btn-outline-primary form-control"
-											placeholder="Descripcion del inmueble" required>
+											placeholder="DESCRIPCIÓN DEL INMUEBLE" required>
 
 									</div>
 
@@ -285,7 +315,7 @@
 
 										<input type="text" id="direccion" name="direccion"
 											class="btn btn-outline-primary form-control"
-											placeholder="Dirección exacta del inmueble" required>
+											placeholder="DIRECCIÓN EXACTA DEL INMUEBLE" required>
 
 									</div>
 
@@ -342,14 +372,14 @@
 						</div>
 						<!-- End of Main Content -->
 
-						<!-- Footer 
+						 <!--Footer--> 
 			<footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
-						<span>Copyright &copy; Your Website 2021</span>
+						<span>Copyright; MR 2023</span>
 					</div>
 				</div>
-			</footer>-->
+			</footer>
 						<!-- End of Footer -->
 
 					</div>

@@ -13,5 +13,7 @@ public interface PublicRepository extends JpaRepository<Publicacion, Integer> {
 	
 	
 	List<Publicacion> findByTipoLugar(String TipoLugar);
+	
+	List<Publicacion> findByDisponible(String disponible);
 		
 }

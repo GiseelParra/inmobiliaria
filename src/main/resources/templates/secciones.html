@@ -65,14 +65,14 @@
 				</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="buttons.html">CASAS</a>
-						<a class="collapse-item" href="buttons.html">APARTAMENTOS</a>
-						<a class="collapse-item" href="buttons.html">LOTES</a>
-						<a class="collapse-item" href="cards.html">TERRENOS</a>
-						<a class="collapse-item" href="cards.html">FINCAS</a>
-						<a class="collapse-item" href="cards.html">LOCALES</a>
-						<a class="collapse-item" href="cards.html">OFICINAS</a>
-						<a class="collapse-item" href="cards.html">EDIFICIOS</a>
+						<a class="collapse-item" th:href="@{/casas}">CASAS</a>
+						<a class="collapse-item" th:href="@{/apartamentos}">APARTAMENTOS</a>
+						<a class="collapse-item" th:href="@{/lotes}">LOTES</a>
+						<a class="collapse-item" th:href="@{/terrenos}">TERRENOS</a>
+						<a class="collapse-item" th:href="@{/fincas}">FINCAS</a>
+						<a class="collapse-item" th:href="@{/locales}">LOCALES</a>
+						<a class="collapse-item" th:href="@{/oficinas}">OFICINAS</a>
+						<a class="collapse-item" th:href="@{/edificios}">EDIFICIOS</a>
 					</div>
 				</div>
 			</li>
@@ -106,7 +106,7 @@
 			<li class="nav-item">
 				<a class="nav-link" th:href="@{/login}">
 					<i class="fas fa fa-user-circle fa-4x text-gray-2"></i>
-					<span>MI CUNETA</span></a>
+					<span>MI CUENTA</span></a>
 			</li>
 
 			<!-- Nav Item - Tables -->
@@ -142,20 +142,6 @@
 						<i class="fa fa-bars"></i>
 					</button>
 
-					<!-- Topbar Search 
-					<form
-						class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-						<div class="input-group">
-							<input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-								aria-label="Search" aria-describedby="basic-addon2">
-							<div class="input-group-append">
-								<button class="btn btn-primary" type="button">
-									<i class="fas fa-search fa-sm"></i>
-								</button>
-							</div>
-						</div>
-					</form>-->
-
 					<!-- Topbar Navbar -->
 					<ul class="navbar-nav ml-auto">
 
@@ -182,43 +168,8 @@
 								</form>
 
 							</div>
-							<!--</li>
-
-
-						<div class="topbar-divider d-none d-sm-block"></div>
-
-						 Nav Item - User Information 
-						<li class="nav-item dropdown no-arrow">
-							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<span class="mr-2 d-none d-lg-inline text-gray-600 small">MI PERFIL</span>
-								<img class="img-profile rounded-circle" src="img/undraw_profile.svg">
-							</a>-->
-							<!-- Dropdown - User Information -
-							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-								aria-labelledby="userDropdown">
-								<a class="dropdown-item" href="#">
-									<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-									Profile
-								</a>
-								<a class="dropdown-item" href="#">
-									<i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-									Settings
-								</a>
-								<a class="dropdown-item" href="#">
-									<i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-									Activity Log
-								</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-									<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-									Logout
-								</a>
-							</div>
 						</li>
-
-					</ul>-->
-
+					</ul>
 				</nav>
 				<!-- End of Topbar -->
 
@@ -318,41 +269,154 @@
 						</div>
 					</div>
 
-					<!-- Illustrations -->
-					<div class="card shadow mb-4">
-						<div class="card-header py-3">
-							<h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
-						</div>
-						<div class="card-body">
-							<div class="text-center">
-								<img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-									src="img/undraw_posting_photo.svg" alt="...">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="card-header py-3">
+								<h6 class="m-0 font-weight-bold text-primary">CASAS</h6>
 							</div>
-							<p>Add some quality, svg illustrations to your project courtesy of <a target="_blank"
-									rel="nofollow" href="https://undraw.co/">unDraw</a>, a
-								constantly updated collection of beautiful svg images that you can use
-								completely free and without attribution!</p>
-							<a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
-								unDraw &rarr;</a>
+							<div class="row">
+								<div class="container">
+									<div class="text-center">
+										<img th:src="@{/secciones/casa.jpg}" class="img-thumbnail">
+									</div>
+									<a th:href="@{/casas}">CONOCER MÁS...</a>
+								</div>
+							</div>
 						</div>
+
+
+						<div class="col-md-6">
+							<div class="card-header py-3">
+								<h6 class="m-0 font-weight-bold text-primary">APARTAMENTOS</h6>
+							</div>
+							<div class="row">
+								<div class="container">
+									<div class="text-center">
+										<img th:src="@{/secciones/apartamento.jpg}" class="img-thumbnail">
+									</div>
+									<a th:href="@{/casas}">CONOCER MÁS...</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="card-header py-3">
+								<h6 class="m-0 font-weight-bold text-primary">LOTES</h6>
+							</div>
+							<div class="row">
+								<div class="container">
+									<div class="text-center">
+										<img th:src="@{/secciones/lote.jpg}" class="img-thumbnail">
+									</div>
+									<a th:href="@{/casas}">CONOCER MÁS...</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="card-header py-3">
+								<h6 class="m-0 font-weight-bold text-primary">TERRENOS</h6>
+							</div>
+							<div class="row">
+								<div class="container">
+									<div class="text-center">
+										<img th:src="@{/secciones/terreno.jpg}" class="img-thumbnail">
+									</div>
+									<a th:href="@{/casas}">CONOCER MÁS...</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="card-header py-3">
+								<h6 class="m-0 font-weight-bold text-primary">FINCAS</h6>
+							</div>
+							<div class="row">
+								<div class="container">
+									<div class="text-center">
+										<img th:src="@{/secciones/finca.jpg}" class="img-thumbnail">
+									</div>
+									<a th:href="@{/casas}">CONOCER MÁS...</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="card-header py-3">
+								<h6 class="m-0 font-weight-bold text-primary">LOCALES</h6>
+							</div>
+							<div class="row">
+								<div class="container">
+									<div class="text-center">
+										<img th:src="@{/secciones/local.jpg}" class="img-thumbnail">
+									</div>
+									<a th:href="@{/casas}">CONOCER MÁS...</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="card-header py-3">
+								<h6 class="m-0 font-weight-bold text-primary">OFICINAS</h6>
+							</div>
+							<div class="row">
+								<div class="container">
+									<div class="text-center">
+										<img th:src="@{/secciones/oficina.jpg}" class="img-thumbnail">
+									</div>
+									<a th:href="@{/casas}">CONOCER MÁS...</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="card-header py-3">
+								<h6 class="m-0 font-weight-bold text-primary">EDIFICIOS</h6>
+							</div>
+							<div class="row">
+								<div class="container">
+									<div class="text-center">
+										<img th:src="@{/secciones/edificio.jpg}" class="img-thumbnail">
+									</div>
+									<a th:href="@{/casas}">CONOCER MÁS...</a>
+								</div>
+							</div>
+						</div>
+
+						<!--div containers-->
 					</div>
 
-					<!-- Bootstrap core JavaScript-->
-					<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
-					<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+				</div>
 
-					<!-- Core plugin JavaScript-->
-					<script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
+			</div>
 
-					<!-- Custom scripts for all pages-->
-					<script th:src="@{/js/sb-admin-2.min.js}"></script>
 
-					<!-- Page level plugins -->
-					<script th:src="@{/vendor/chart.js/Chart.min.js}"></script>
+			<!-- Footer -->
+			<footer class="sticky-footer bg-white">
+				<div class="container my-auto">
+					<div class="copyright text-center my-auto">
+						<span>Copyright; MR 2023</span>
+					</div>
+				</div>
+			</footer>
+			<!-- End of Footer -->
 
-					<!-- Page level custom scripts -->
-					<script th:src="@{/js/demo/chart-area-demo.js}"></script>
-					<script th:src="@{/js/demo/chart-pie-demo.js}"></script>
+			<!-- Bootstrap core JavaScript-->
+			<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+			<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+			<!-- Core plugin JavaScript-->
+			<script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
+
+			<!-- Custom scripts for all pages-->
+			<script th:src="@{/js/sb-admin-2.min.js}"></script>
+
+			<!-- Page level plugins -->
+			<script th:src="@{/vendor/chart.js/Chart.min.js}"></script>
+
+			<!-- Page level custom scripts -->
+			<script th:src="@{/js/demo/chart-area-demo.js}"></script>
+			<script th:src="@{/js/demo/chart-pie-demo.js}"></script>
 
 </body>
 

@@ -24,20 +24,33 @@ public class Publicacion {
 	@Column(length = 20)
 	private String direccion;
 
+	@Column(columnDefinition = "TEXT")
+	private String medida;
+
+	@Column(length = 20)
+	private String disponible;
+
 	private String Imagen;
 
 	public Publicacion() {
 
 	}
 
-	public Publicacion(int idLugar, String tipoLugar, String descripcion, String direccion, String imagen) {
+
+
+	public Publicacion(int idLugar, String tipoLugar, String descripcion, String direccion, String medida,
+			String disponible, String imagen) {
 		super();
 		IdLugar = idLugar;
 		this.tipoLugar = tipoLugar;
 		Descripcion = descripcion;
 		this.direccion = direccion;
+		this.medida = medida;
+		this.disponible = disponible;
 		Imagen = imagen;
 	}
+
+
 
 	public int getIdLugar() {
 		return IdLugar;
@@ -71,6 +84,22 @@ public class Publicacion {
 		this.direccion = direccion;
 	}
 
+	public String getMedida() {
+		return medida;
+	}
+
+	public void setMedida(String medida) {
+		this.medida = medida;
+	}
+
+	public String getDisponible() {
+		return disponible;
+	}
+
+	public void setDisponible(String disponible) {
+		this.disponible = disponible;
+	}
+
 	public String getImagen() {
 		return Imagen;
 	}
@@ -78,9 +107,5 @@ public class Publicacion {
 	public void setImagen(String imagen) {
 		Imagen = imagen;
 	}
-
-
-	
-	
 
 }

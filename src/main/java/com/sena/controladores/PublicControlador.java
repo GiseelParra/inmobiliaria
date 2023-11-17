@@ -34,6 +34,8 @@ public class PublicControlador {
 
 	);
 
+	List<String> disponible = new ArrayList<String>(Arrays.asList("ARRIENDO", "ALQUILER", "VENTA"));
+
 	@Autowired
 	private publicServicio publicServicio;
 
@@ -46,6 +48,7 @@ public class PublicControlador {
 	@GetMapping("/FormuCrearpublic")
 	public String FormuCrearpublic(Model model) {
 		model.addAttribute("TipoLugar", tipoLugar);
+		model.addAttribute("disponible", disponible);
 		model.addAttribute("ObPublic", new Publicacion());
 		return "FormuCrearpublic";
 	}

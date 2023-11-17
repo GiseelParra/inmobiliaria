@@ -1,6 +1,6 @@
 package com.sena.servicio;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class publicServicio {
 	public void ActualizarPublic(Publicacion publicacion) {
 		publicRepository.save(publicacion);
 	}
-			
+
 	public List<Publicacion> Listapublica() {
 		return publicRepository.findAll();
 	}
@@ -30,11 +30,6 @@ public class publicServicio {
 	public Publicacion buscarpublic(int IdLugar) {
 		return publicRepository.findById(IdLugar).get();
 	}
-	
-	
-	/*public List<Publicacion> Listapublicaportipo() {
-		
-	}*/
 
 	public void eliminarpublic(int IdLugar) {
 		publicRepository.deleteById(IdLugar);
