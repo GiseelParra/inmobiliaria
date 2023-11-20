@@ -86,9 +86,9 @@
 				<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
 					data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="utilities-color.html">ARRIENDO</a>
-						<a class="collapse-item" href="utilities-border.html">ALQUILER</a>
-						<a class="collapse-item" href="utilities-animation.html">VENTA</a>
+						<a class="collapse-item" th:href="@{/arriendo}">ARRIENDO</a>
+						<a class="collapse-item" th:href="@{/alquiler}">ALQUILER</a>
+						<a class="collapse-item" th:href="@{/venta}">VENTA</a>
 					</div>
 				</div>
 			</li>
@@ -237,11 +237,11 @@
 											</td>
 											<td>
 												<p scope="row" th:text="${Publicacion.tipoLugar}"></p>
-												<p|scope="row" th:text="${Publicacion.Descripcion}">
-													</p>
-													<p scope="row" th:text="${Publicacion.direccion}"></p>
-													<P scope="row" th:text="${Publicacion.disponible}"></P>
-													<p scope="row" th:text="${Publicacion.medida}"></p>
+												<p scope="row" th:text="${Publicacion.Descripcion}"></p>
+												<p scope="row" th:text="${Publicacion.direccion}"></p>
+												<P scope="row" th:text="${Publicacion.disponible}"></P>
+												<p scope="row" th:text="${Publicacion.medida}"></p>
+												<p scope="row" th:text="${Publicacion.precio}"></p>
 											</td>
 											<td>
 												<a
@@ -264,7 +264,7 @@
 			</div>
 			<!-- End of Main Content -->
 
-			<!--Footer--> 
+			<!--Footer-->
 			<footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">

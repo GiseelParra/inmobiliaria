@@ -87,9 +87,9 @@
 				<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
 					data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="utilities-color.html">ARRIENDO</a>
-						<a class="collapse-item" href="utilities-border.html">ALQUILER</a>
-						<a class="collapse-item" href="utilities-animation.html">VENTA</a>
+						<a class="collapse-item" th:href="@{/arriendo}">ARRIENDO</a>
+						<a class="collapse-item" th:href="@{/alquiler}">ALQUILER</a>
+						<a class="collapse-item" th:href="@{/venta}">VENTA</a>
 					</div>
 				</div>
 			</li>
@@ -210,8 +210,8 @@
 												PUBLICACIONES</div>
 										</div>
 										<div class="col-auto">
-
-											<i class="fas fa-fw fa-table fa-4x text-gray-400"></i>
+											<a th:href="@{/AdministrarPrincipal}">
+												<i class="fas fa-fw fa-table fa-4x text-gray-400"></i>
 											</a>
 										</div>
 									</div>

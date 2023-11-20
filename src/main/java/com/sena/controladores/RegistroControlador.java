@@ -67,4 +67,21 @@ public class RegistroControlador {
 		model.addAttribute("listarPublic", publicServicio.Listapublica());
 		return "edificios";
 	}
+	
+	@GetMapping("/arriendo")
+	public String arriendo(Model model) {
+		model.addAttribute("listarPublic", publicServicio.Listapublica());
+		return "arriendo";
+	}
+	@GetMapping("/alquiler")
+	public String alquiler(Model model) {
+		model.addAttribute("listarPublic", publicServicio.Listapublica());
+		return "alquiler";
+	}
+	@GetMapping("/venta")
+	public String venta(Model model) {
+		model.addAttribute("listarPublic", publicServicio.Listapublica());
+		return "venta";
+	}
+
 }

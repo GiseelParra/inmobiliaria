@@ -76,7 +76,7 @@
 				</div>
 			</li>
 
-			<!-- Nav Item - Utilities Collapse Menu -->
+				<!-- Nav Item - Utilities Collapse Menu -->
 			<li class="nav-item">
 				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
 					aria-expanded="true" aria-controls="collapseUtilities">
@@ -86,9 +86,9 @@
 				<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
 					data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
-						<a class="collapse-item" href="utilities-color.html">ARRIENDO</a>
-						<a class="collapse-item" href="utilities-border.html">ALQUILER</a>
-						<a class="collapse-item" href="utilities-animation.html">VENTA</a>
+						<a class="collapse-item" th:href="@{/arriendo}">ARRIENDO</a>
+						<a class="collapse-item" th:href="@{/alquiler}">ALQUILER</a>
+						<a class="collapse-item" th:href="@{/venta}">VENTA</a>
 					</div>
 				</div>
 			</li>
@@ -289,6 +289,18 @@
 											placeholder="MEDIDAS DEL INMUEBLE" required>
 
 									</div>
+
+									<div class="mb-3">
+										<labe for="precio" class="m-0 font-weight-bold text-primary form-label">PRECIO
+											DEL INMUEBLE</labe>
+									</div>
+
+									<div class="input-group mb-3">
+										<input type="number" id="precio" name="precio"
+											class="btn btn-outline-primary form-control"
+											placeholder="PRECIO EXACTO DEL INMUEBLE" required>
+									</div>
+
 									<div class="mb-3">
 
 										<label for="Descripcion"
@@ -372,14 +384,14 @@
 						</div>
 						<!-- End of Main Content -->
 
-						 <!--Footer--> 
-			<footer class="sticky-footer bg-white">
-				<div class="container my-auto">
-					<div class="copyright text-center my-auto">
-						<span>Copyright; MR 2023</span>
-					</div>
-				</div>
-			</footer>
+						<!--Footer-->
+						<footer class="sticky-footer bg-white">
+							<div class="container my-auto">
+								<div class="copyright text-center my-auto">
+									<span>Copyright; MR 2023</span>
+								</div>
+							</div>
+						</footer>
 						<!-- End of Footer -->
 
 					</div>

@@ -31,16 +31,16 @@ public class Publicacion {
 	private String disponible;
 
 	private String Imagen;
+	
+	@Column
+	private Double precio;
 
 	public Publicacion() {
 
 	}
 
-
-
 	public Publicacion(int idLugar, String tipoLugar, String descripcion, String direccion, String medida,
-			String disponible, String imagen) {
-		super();
+			String disponible, String imagen, Double precio) {
 		IdLugar = idLugar;
 		this.tipoLugar = tipoLugar;
 		Descripcion = descripcion;
@@ -48,9 +48,8 @@ public class Publicacion {
 		this.medida = medida;
 		this.disponible = disponible;
 		Imagen = imagen;
+		this.precio = precio;
 	}
-
-
 
 	public int getIdLugar() {
 		return IdLugar;
@@ -106,6 +105,14 @@ public class Publicacion {
 
 	public void setImagen(String imagen) {
 		Imagen = imagen;
+	}
+
+	public Double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(Double precio) {
+		this.precio = precio;
 	}
 
 }
