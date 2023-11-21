@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -40,8 +41,11 @@ public class PublicControlador {
 	private publicServicio publicServicio;
 
 	@GetMapping("/")
-	public String AdministrarPubli(Model model) {
-		model.addAttribute("listarPublic", publicServicio.Listapublica());
+	public String AdministrarPubli(Model model, @Param("palabraClave") String palabraClave) {
+		List<Publicacion> Listapublica = publicServicio.listAll(palabraClave);
+		model.addAttribute("listarPublic", Listapublica);
+		model.addAttribute("palabraClave", palabraClave);
+
 		return "AdministrarPubli";
 	}
 

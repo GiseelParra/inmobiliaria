@@ -1,6 +1,5 @@
 package com.sena.servicio;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,10 @@ public class publicServicio {
 		publicRepository.save(publicacion);
 	}
 
-	public List<Publicacion> Listapublica() {
+	public List<Publicacion> listAll(String palbraClave) {
+		if(palbraClave != null) {
+			return publicRepository.findAll(palbraClave);
+		}
 		return publicRepository.findAll();
 	}
 
@@ -38,5 +40,6 @@ public class publicServicio {
 	public void guardar(Publicacion publicacion) {
 		publicRepository.save(publicacion);
 	}
+
 
 }
