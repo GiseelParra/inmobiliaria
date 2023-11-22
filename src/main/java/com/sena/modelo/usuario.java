@@ -21,18 +21,18 @@ public class usuario {
 	@Column(length = 50)
 	private String apellido;
 
-	@Column(length = 10)
-	private String celular;
+	@Column(length = 70)
+	private String correo;
 
 	public usuario() {
 
 	}
 
-	public usuario(int idUsuario, String nombre, String apellido, String celular) {
+	public usuario(int idUsuario, String nombre, String apellido, String correo) {
 		IdUsuario = idUsuario;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.celular = celular;
+		this.correo = correo;
 	}
 
 	public int getIdUsuario() {
@@ -60,11 +60,11 @@ public class usuario {
 	}
 
 	public String getCelular() {
-		return celular;
+		return correo;
 	}
 
-	public void setCelular(String celular) {
-		this.celular = celular;
+	public void setCelular(String correo) {
+		this.correo = correo;
 	}
 
 }

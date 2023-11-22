@@ -105,14 +105,14 @@
 			<!-- Nav Item - Charts -->
 			<li class="nav-item">
 				<a class="nav-link" th:href="@{/login}">
-					<i class="fas fa fa-user-circle fa-4x text-gray-2"></i>
+					<i class="fas fa fa-user-circle fa-2x text-gray-2"></i>
 					<span>MI CUENTA</span></a>
 			</li>
 
 			<!-- Nav Item - Tables -->
 			<li class="nav-item">
 				<a class="nav-link" th:href="@{/AdministrarPrincipal}">
-					<i class="fas fa-fw fa-table"></i>
+					<i class="fas fa-fw fa-table fa-2x text-gray-2"></i>
 					<span>PUBLICACIONES</span></a>
 			</li>
 
@@ -142,20 +142,21 @@
 						<i class="fa fa-bars"></i>
 					</button>
 
-					<!-- Topbar Search 
+					<!-- Topbar Search-->
 					<form
 						class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
 						<div class="input-group">
-							<input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-								aria-label="Search" aria-describedby="basic-addon2">
+							<input type="text" name="palabraClave" class="form-control bg-light border-0 small"
+								id="palabraClave" th:value="${palabraClave}" placeholder="BUSCAR" aria-label="Search"
+								aria-describedby="basic-addon2" required>
 							<div class="input-group-append">
-								<button class="btn btn-primary" type="button">
+								<button class="btn btn-primary" type="submit">
+									&nbsp; &nbsp;
 									<i class="fas fa-search fa-sm"></i>
 								</button>
 							</div>
 						</div>
-					</form>-->
-
+					</form>
 					<!-- Topbar Navbar -->
 					<ul class="navbar-nav ml-auto">
 
@@ -259,7 +260,7 @@
 												PUBLICACIONES</div>
 										</div>
 										<div class="col-auto">
-											<a th:href="@{/AdministrarPrincipal}"> 
+											<a th:href="@{/AdministrarPrincipal}">
 												<i class="fas fa-fw fa-table fa-4x text-gray-400"></i>
 											</a>
 										</div>

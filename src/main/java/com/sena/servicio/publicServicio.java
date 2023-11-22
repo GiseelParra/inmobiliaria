@@ -22,10 +22,15 @@ public class publicServicio {
 		publicRepository.save(publicacion);
 	}
 
-	public List<Publicacion> listAll(String palbraClave) {
-		if(palbraClave != null) {
-			return publicRepository.findAll(palbraClave);
+	public List<Publicacion> listAll(String palabraClave) {
+		if(palabraClave != null) {
+			return publicRepository.findAll(palabraClave);
 		}
+		return publicRepository.findAll();
+	}
+	
+	
+	public List<Publicacion> listarPublicaciones(){
 		return publicRepository.findAll();
 	}
 
