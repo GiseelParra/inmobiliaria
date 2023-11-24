@@ -10,13 +10,9 @@ import com.sena.servicio.publicServicio;
 
 @Controller
 public class RegistroControlador {
-	
-	
-	@Autowired
-	private publicServicio publicServicio;
 
 	@Autowired
-	private PublicControlador publicControlador;
+	private publicServicio publicServicio;
 
 	@GetMapping("/Registro")
 	public String Registro() {
@@ -70,17 +66,19 @@ public class RegistroControlador {
 		model.addAttribute("listarPublic", publicServicio.listarPublicaciones());
 		return "edificios";
 	}
-	
+
 	@GetMapping("/arriendo")
 	public String arriendo(Model model) {
 		model.addAttribute("listarPublic", publicServicio.listarPublicaciones());
 		return "arriendo";
 	}
+
 	@GetMapping("/alquiler")
 	public String alquiler(Model model) {
 		model.addAttribute("listarPublic", publicServicio.listarPublicaciones());
 		return "alquiler";
 	}
+
 	@GetMapping("/venta")
 	public String venta(Model model) {
 		model.addAttribute("listarPublic", publicServicio.listarPublicaciones());

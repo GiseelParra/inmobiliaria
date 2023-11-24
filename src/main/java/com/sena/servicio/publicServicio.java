@@ -44,7 +44,12 @@ public class publicServicio {
 
 	public void guardar(Publicacion publicacion) {
 		publicRepository.save(publicacion);
+		
+		
 	}
+	
+	
+
 
 
 }

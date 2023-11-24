@@ -93,18 +93,30 @@ public class PublicControlador {
 		 * "Existieron errores en el formulario"); return
 		 * "redirect:/PublicControlador/FormuCrearpublic"; }
 		 */
+		
+		
+		
+		publicServicio.guardar(publicacion);
+		
+		System.out.println(publicacion.getIdLugar());
+		
 
 		if (!imagenes.isEmpty()) {
 
 			Path directorioimagenes = Paths.get("src//main//resources//static/imagenes");
 			String rutaAbsoluta = directorioimagenes.toFile().getAbsolutePath();
+			
+			
+			
+		
 
 			try {
 				byte[] bytesImg = imagenes.getBytes();
-				Path rutaCompleta = Paths.get(rutaAbsoluta + "//" + imagenes.getOriginalFilename());
+				Path rutaCompleta = Paths.get(rutaAbsoluta + "//" + imagenes.);
 				Files.write(rutaCompleta, bytesImg);
 
 				publicacion.setImagen(imagenes.getOriginalFilename());
+				publicServicio.ActualizarPublic(publicacion);
 
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -112,7 +124,7 @@ public class PublicControlador {
 
 		}
 
-		publicServicio.guardar(publicacion);
+
 		attributes.addFlashAttribute("exito", "Producto guardado con exito");
 		return "redirect:/PublicControlador/";
 	}
