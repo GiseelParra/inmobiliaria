@@ -138,49 +138,9 @@
 						<i class="fa fa-bars"></i>
 					</button>
 
-					<!-- Topbar Search
-					<form
-						class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-						<div class="input-group">
-							<input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-								aria-label="Search" aria-describedby="basic-addon2">
-							<div class="input-group-append">
-								<button class="btn btn-primary" type="button">
-									<i class="fas fa-search fa-sm"></i>
-								</button>
-							</div>
-						</div>
-					</form>-->
-
 					<!-- Topbar Navbar -->
 					<ul class="navbar-nav ml-auto">
 
-						<!-- Nav Item - Search Dropdown (Visible Only XS)
-						<li class="nav-item dropdown no-arrow d-sm-none">
-							<a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="fas fa-search fa-fw"></i>
-							</a> -->
-						<!-- Dropdown - Messages 
-							<div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-								aria-labelledby="searchDropdown">
-								<form class="form-inline mr-auto w-100 navbar-search">
-									<div class="input-group">
-										<input type="text" class="form-control bg-light border-0 small"
-											placeholder="Search for..." aria-label="Search"
-											aria-describedby="basic-addon2">
-										<div class="input-group-append">
-											<button class="btn btn-primary" type="button">
-												<i class="fas fa-search fa-sm"></i>
-											</button>
-										</div>
-									</div>
-								</form>
-							</div>
-						</li>
-
-
-						<div class="topbar-divider d-none d-sm-block"></div>-->
 
 						<!-- Nav Item - User Information -->
 						<li class="nav-item dropdown no-arrow">
@@ -230,24 +190,13 @@
 							Illustrations -->
 							<!-- DataTales Example -->
 
-							<div class="container px-4 text-center">
-
-
-
-
-
-
-
-
+							<div class="container-lg px-4 text-center">
 
 								<form th:action="@{/PublicControlador/guardar}" method="post" th:object="${ObPublic}"
 									enctype="multipart/form-data">
 
 									<br>
 									<br>
-
-
-
 
 									<div class="mb-3">
 										<label for="tipoLugar" class="m-0 font-weight-bold text-primary form-label">TIPO
@@ -263,13 +212,6 @@
 											</option>
 										</select>
 									</div>
-
-
-
-
-
-
-
 
 									<div class="mb-3">
 										<label for="disponible" class="m-0 font-weight-bold text-primary form-label">
@@ -301,7 +243,7 @@
 
 									<div class="mb-3">
 										<labe for="precio" class="m-0 font-weight-bold text-primary form-label">PRECIO
-											DEL INMUEBLE</labe>
+											DEL INMUEBLE*</labe>
 									</div>
 
 									<div class="input-group mb-3">
@@ -335,8 +277,10 @@
 									<div class="alternativa" id="alternativa-primaria">
 
 										<div class="mb-3">
+											
 											<label for="Imagen"
-												class="m-0 font-weight-bold text-primary form-label">IMAGEN UNO</label>
+												class="m-0 font-weight-bold text-primary form-label">IMAGEN
+												UNO</label>
 											<br>
 
 											<label for="Imagen"
@@ -347,14 +291,16 @@
 
 										<div class="input-group mb-3">
 
-											<input type="file" name="Imagen2" id="Imagen2"
+											<input type="file" name="ImagenUno" id="ImagenUno"
 												class="btn btn-outline-primary form-control">
 
 										</div>
 
 										<div class="mb-3">
+
 											<label for="Imagen"
-												class="m-0 font-weight-bold text-primary form-label">IMAGEN DOS</label>
+												class="m-0 font-weight-bold text-primary form-label">IMAGEN*
+												DOS</label>
 											<br>
 
 											<label for="Imagen"
@@ -365,14 +311,58 @@
 
 										<div class="input-group mb-3">
 
-											<input type="file" name="Imagen3" id="Imagen3"
+											<input type="file" name="ImagenDos" id="ImagenDos"
+												class="btn btn-outline-primary form-control" >
+
+										</div>
+
+										<div class="mb-3">
+											<label for="Imagen"
+												class="m-0 font-weight-bold text-primary form-label">IMAGEN
+												TRES</label>
+											<br>
+
+											<label for="Imagen"
+												class="m-0 font-weight-bold text-primary form-label">FOTOGRAFIA
+												HORIZONTAL
+												(REQUERIDO)</label>
+										</div>
+
+
+										<div class="input-group mb-3">
+
+											<input type="file" name="ImagenTres" id="ImagenTres"
 												class="btn btn-outline-primary form-control">
 
 										</div>
 										
 										<div class="mb-3">
 											<label for="Imagen"
-												class="m-0 font-weight-bold text-primary form-label">IMAGEN TRES</label>
+												class="m-0 font-weight-bold text-primary form-label">IMAGEN
+												TRES</label>
+											<br>
+
+											<label for="Imagen"
+												class="m-0 font-weight-bold text-primary form-label">FOTOGRAFIA
+												HORIZONTAL
+												(REQUERIDO)</label>
+										</div>
+
+
+										<div class="input-group mb-3">
+
+											<input type="file" name="ImagenCuarta" id="ImagenCuarta"
+												class="btn btn-outline-primary form-control">
+
+										</div>
+
+									</div>
+
+									<div class="alternativa" id="alternativa-ESO">
+
+										<div class="mb-3">
+											<label for="Imagen"
+												class="m-0 font-weight-bold text-primary form-label">IMAGEN</label>
 											<br>
 
 											<label for="Imagen"
@@ -383,33 +373,8 @@
 
 										<div class="input-group mb-3">
 
-											<input type="file" name="Imagen3" id="Imagen3"
+											<input type="file" name="Imagen" id="Imagen"
 												class="btn btn-outline-primary form-control">
-
-										</div>
-
-									</div>
-
-
-									<div class="alternativa" id="alternativa-ESO">
-
-										<div class="mb-3">
-											<label for="Imagen"
-												class="m-0 font-weight-bold text-primary form-label">IMAGEN SOLO UNA
-												IMAGEN</label>
-											<br>
-
-											<label for="Imagen"
-												class="m-0 font-weight-bold text-primary form-label">FOTOGRAFIA
-												HORIZONTAL
-												(REQUERIDO)</label>
-
-											<div class="input-group mb-3">
-
-												<input type="file" name="Imagen" id="Imagen"
-													class="btn btn-outline-primary form-control">
-
-											</div>
 
 										</div>
 
@@ -421,117 +386,100 @@
 
 									</div>
 
-								</form>
-
-							</div>
-
-							<!-- Approach 
-							<div class="card shadow mb-4">
-								<div class="card-header py-3">
-									<h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
-								</div>
-								<div class="card-body">
-									<p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce
-										CSS bloat and poor page performance. Custom CSS classes are used to create
-										custom components and custom utility classes.</p>
-									<p class="mb-0">Before working with this theme, you should become familiar with the
-										Bootstrap framework, especially the utility classes.</p>
-								</div>
 							</div>
 
 						</div>
+
+						</form>
+
 					</div>
 
 				</div>
-				 /.container-fluid -->
+				<!-- End of Main Content -->
 
-						</div>
-						<!-- End of Main Content -->
-
-						<!--Footer-->
-						<footer class="sticky-footer bg-white">
-							<div class="container my-auto">
-								<div class="copyright text-center my-auto">
-									<span>Copyright; MR 2023</span>
-								</div>
-							</div>
-						</footer>
-						<!-- End of Footer -->
-
-					</div>
-					<!-- End of Content Wrapper -->
-
-				</div>
-				<!-- End of Page Wrapper -->
-
-				<!-- Scroll to Top Button-->
-				<a class="scroll-to-top rounded" href="#page-top">
-					<i class="fas fa-angle-up"></i>
-				</a>
-
-				<!-- Logout Modal-->
-				<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-					aria-hidden="true">
-					<div class="modal-dialog" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-								<button class="close" type="button" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">×</span>
-								</button>
-							</div>
-							<div class="modal-body">Select "Logout" below if you are ready to end your current session.
-							</div>
-							<div class="modal-footer">
-								<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-								<a class="btn btn-primary" href="login.html">Logout</a>
-							</div>
+				<!--Footer-->
+				<footer class="sticky-footer bg-white">
+					<div class="container my-auto">
+						<div class="copyright text-center my-auto">
+							<span>Copyright; MR 2023</span>
 						</div>
 					</div>
+				</footer>
+				<!-- End of Footer -->
+
+			</div>
+			<!-- End of Content Wrapper -->
+
+		</div>
+		<!-- End of Page Wrapper -->
+
+		<!-- Scroll to Top Button-->
+		<a class="scroll-to-top rounded" href="#page-top">
+			<i class="fas fa-angle-up"></i>
+		</a>
+
+		<!-- Logout Modal
+		<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<div class="modal-body">Select "Logout" below if you are ready to end your current session.
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+						<a class="btn btn-primary" href="login.html">Logout</a>
+					</div>
 				</div>
+			</div>
+		</div>-->
 
-				<!-- Bootstrap core JavaScript-->
-				<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
-				<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+		<!-- Bootstrap core JavaScript-->
+		<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+		<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
 
-				<!-- Core plugin JavaScript-->
-				<script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
+		<!-- Core plugin JavaScript-->
+		<script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
 
-				<!-- Custom scripts for all pages-->
-				<script th:src="@{/js/sb-admin-2.min.js}"></script>
+		<!-- Custom scripts for all pages-->
+		<script th:src="@{/js/sb-admin-2.min.js}"></script>
 
-				<!-- Page level plugins -->
-				<script th:src="@{/vendor/chart.js/Chart.min.js}"></script>
+		<!-- Page level plugins -->
+		<script th:src="@{/vendor/chart.js/Chart.min.js}"></script>
 
-				<!-- Page level custom scripts -->
-				<script th:src="@{/js/demo/chart-area-demo.js}"></script>
-				<script th:src="@{/js/demo/chart-pie-demo.js}"></script>
-
-
-				<script>
-
-					window.addEventListener('load', function (e) {
-						document.getElementById('alternativa-primaria').style.display = 'none';
-						document.getElementById('alternativa-ESO').style.display = 'none';
-
-					});
+		<!-- Page level custom scripts -->
+		<script th:src="@{/js/demo/chart-area-demo.js}"></script>
+		<script th:src="@{/js/demo/chart-pie-demo.js}"></script>
 
 
-					document.getElementById('TipoLugar').addEventListener('change', function (e) {
-						if (this.value == 'CASAS' || this.value == 'APARTAMENTOS' || this.value == 'FINCAS') {
+		<script>
 
-							document.getElementById('alternativa-primaria').style.display = 'block';
-							document.getElementById('alternativa-ESO').style.display = 'none';
+			window.addEventListener('load', function (e) {
+				document.getElementById('alternativa-primaria').style.display = 'none';
+				document.getElementById('alternativa-ESO').style.display = 'none';
 
-						} else if (this.value == 'LOTES' || this.value == 'TERRENOS' || this.value == 'lOCALES' || this.value == 'OFICINAS' || this.value == 'EDIFICIOS') {
-							document.getElementById('alternativa-ESO').style.display = 'block';
-							document.getElementById('alternativa-primaria').style.display = 'none';
-						} else {
-							document.getElementById('alternativa-primaria').style.display = 'none';
-							document.getElementById('alternativa-ESO').style.display = 'none';
-						}
-					});
-				</script>
+			});
+
+			document.getElementById('TipoLugar').addEventListener('change', function (e) {
+				if (this.value == 'CASAS' || this.value == 'APARTAMENTOS' || this.value == 'FINCAS') {
+
+					document.getElementById('alternativa-primaria').style.display = 'block';
+					document.getElementById('alternativa-ESO').style.display = 'none';
+
+				} else if (this.value == 'LOTES' || this.value == 'TERRENOS' || this.value == 'lOCALES' || this.value == 'OFICINAS' || this.value == 'EDIFICIOS') {
+					document.getElementById('alternativa-ESO').style.display = 'block';
+					document.getElementById('alternativa-primaria').style.display = 'none';
+				} else {
+					document.getElementById('alternativa-primaria').style.display = 'none';
+					document.getElementById('alternativa-ESO').style.display = 'none';
+				}
+			});
+		</script>
 
 
 </body>

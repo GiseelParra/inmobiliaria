@@ -83,7 +83,10 @@ public class PublicControlador {
 
 	@PostMapping("/guardar")
 	public String guardar(@Validated @ModelAttribute("ObPublic") Publicacion publicacion, BindingResult result,
-			Model model, @RequestParam("Imagen") MultipartFile imagenes, RedirectAttributes attributes) {
+			Model model, @RequestParam("Imagen") MultipartFile imagenes, RedirectAttributes attributes,
+			@RequestParam("ImagenUno") MultipartFile ImagenUno ,@RequestParam("ImagenDos") MultipartFile ImagenDos,
+			@RequestParam("ImagenTres") MultipartFile ImagenTres,
+			@RequestParam("ImagenCuarta") MultipartFile ImagenCuarta) {
 
 		/*
 		 * if (result.hasErrors()) { model.addAttribute("titulo", "FormuCrearpublic");
@@ -98,31 +101,67 @@ public class PublicControlador {
 		
 		publicServicio.guardar(publicacion);
 		
-		System.out.println(publicacion.getIdLugar());
+		Path directorioimagenes = Paths.get("src//main//resources//static/imagenes");
+		String rutaAbsoluta = directorioimagenes.toFile().getAbsolutePath();
 		
 
 		if (!imagenes.isEmpty()) {
 
-			Path directorioimagenes = Paths.get("src//main//resources//static/imagenes");
-			String rutaAbsoluta = directorioimagenes.toFile().getAbsolutePath();
-			
-			
-			
-		
-
 			try {
 				byte[] bytesImg = imagenes.getBytes();
-				Path rutaCompleta = Paths.get(rutaAbsoluta + "//" + imagenes.);
+				String ruta = rutaAbsoluta + "\\" + publicacion.getIdLugar()+ ".jpeg";
+				Path rutaCompleta = Paths.get(ruta);
 				Files.write(rutaCompleta, bytesImg);
 
-				publicacion.setImagen(imagenes.getOriginalFilename());
+				publicacion.setImagen(publicacion.getIdLugar()+ ".jpeg");
 				publicServicio.ActualizarPublic(publicacion);
 
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 
+		}else if(!ImagenUno.isEmpty() && !ImagenDos.isEmpty() && !ImagenTres.isEmpty() && !ImagenCuarta.isEmpty()) {
+			
+			try {
+					
+				
+				    byte[] bytesImg = ImagenUno.getBytes();
+					String ruta = rutaAbsoluta + "\\" + publicacion.getIdLugar()+ ".jpeg";
+					Path rutaCompleta = Paths.get(ruta);
+					Files.write(rutaCompleta, bytesImg);
+
+					publicacion.setImagen(publicacion.getIdLugar()+ ".jpeg");
+					publicServicio.ActualizarPublic(publicacion);
+					
+					
+					  byte[] bytesImgDos = ImagenDos.getBytes();
+					  String rutaDos = rutaAbsoluta + "\\" + "2-"+publicacion.getIdLugar()+ ".jpeg";
+					  Path rutaCompletaDos = Paths.get(rutaDos);
+					  Files.write(rutaCompletaDos, bytesImgDos);
+					  
+					  
+					  byte[] bytesImgTres = ImagenTres.getBytes();
+					  String rutaTres = rutaAbsoluta + "\\" + "3-"+publicacion.getIdLugar()+ ".jpeg";
+					  Path rutaCompletaTres = Paths.get(rutaTres);
+					  Files.write(rutaCompletaTres, bytesImgTres);
+					  
+					  byte[] bytesImgCuatro = ImagenCuarta.getBytes();
+					  String rutaCuatro = rutaAbsoluta + "\\" + "4-"+publicacion.getIdLugar()+ ".jpeg";
+					  Path rutaCompletaCuatro = Paths.get(rutaCuatro);
+					  Files.write(rutaCompletaCuatro, bytesImgCuatro);
+					
+				
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
 		}
+		
+		
+		
+		
+		
 
 
 		attributes.addFlashAttribute("exito", "Producto guardado con exito");
