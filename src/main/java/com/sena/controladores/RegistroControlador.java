@@ -24,7 +24,13 @@ public class RegistroControlador {
 		model.addAttribute("listarPublic", publicServicio.listarPublicaciones());
 		return "casas";
 	}
-
+	
+	@GetMapping("/habitaciones")
+	public String habitaciones(Model model) {
+		model.addAttribute("listarPublic", publicServicio.listarPublicaciones());
+		return "habitaciones";
+	}
+	
 	@GetMapping("/apartamentos")
 	public String apartamentos(Model model) {
 		model.addAttribute("listarPublic", publicServicio.listarPublicaciones());

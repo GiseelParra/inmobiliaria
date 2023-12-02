@@ -66,6 +66,7 @@
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<a class="collapse-item" th:href="@{/casas}">CASAS</a>
+						<a class="collapse-item" th:href="@{/habitaciones}">HABITACIONES</a>
 						<a class="collapse-item" th:href="@{/apartamentos}">APARTAMENTOS</a>
 						<a class="collapse-item" th:href="@{/lotes}">LOTES</a>
 						<a class="collapse-item" th:href="@{/terrenos}">TERRENOS</a>
@@ -283,7 +284,21 @@
 								</div>
 							</div>
 						</div>
-
+						
+						<div class="col-md-6">
+							<div class="card-header py-3">
+								<h6 class="m-0 font-weight-bold text-primary">HABITACIONES</h6>
+							</div>
+							<div class="row">
+								<div class="container">
+									<div class="text-center">
+										<img th:src="@{/secciones/habitaciones.jpg}" class="img-thumbnail">
+									</div>
+									<a th:href="@{/habitaciones}">CONOCER MÁS...</a>
+								</div>
+							</div>
+						</div>
+						
 
 						<div class="col-md-6">
 							<div class="card-header py-3">

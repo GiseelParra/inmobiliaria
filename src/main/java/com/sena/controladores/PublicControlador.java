@@ -31,7 +31,7 @@ import com.sena.servicio.publicServicio;
 public class PublicControlador {
 
 	List<String> tipoLugar = new ArrayList<String>(
-			Arrays.asList("CASAS", "APARTAMENTOS", "LOTES", "TERRENOS", "FINCAS", "lOCALES", "OFICINAS", "EDIFICIOS")
+			Arrays.asList("CASAS","HABITACIONES", "APARTAMENTOS", "LOTES", "TERRENOS", "FINCAS", "lOCALES", "OFICINAS", "EDIFICIOS")
 
 	);
 
